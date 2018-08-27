@@ -8,7 +8,7 @@ class Baby < ApplicationRecord
 
 	private 
 
-	def add_mother_to_care_takers
+	def add_mother_to_caretakers
 		self.caretakers << User.find(self.mother_id)
 	end
 end

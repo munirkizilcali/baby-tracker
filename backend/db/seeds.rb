@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+pinar = User.create({name:'Pinar', email:'test@test.com'})
+melissa = Baby.create({name: 'Melissa', sex:'female', mother_id:1, birth_day:'16-02-2018'})
+munir = User.create({name:'Munir', email:'test2@test2.com'})
+
+melissa.caretakers << munir
+
