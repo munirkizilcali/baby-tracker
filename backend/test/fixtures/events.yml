@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  baby: one
+  caretaker: one
+  amount_1: 1
+  amount_2: 1
+  unit_1: MyString
+  unit_2: MyString
+  notes: MyString
+  event_type: MyString
+  event: one
+  evet_time: 2018-08-26 20:11:13
+
+two:
+  baby: two
+  caretaker: two
+  amount_1: 1
+  amount_2: 1
+  unit_1: MyString
+  unit_2: MyString
+  notes: MyString
+  event_type: MyString
+  event: two
+  evet_time: 2018-08-26 20:11:13

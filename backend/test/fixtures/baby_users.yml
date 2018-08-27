@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  baby: one
+  user: one
+  role: MyString
+  active: false
+
+two:
+  baby: two
+  user: two
+  role: MyString
+  active: false
