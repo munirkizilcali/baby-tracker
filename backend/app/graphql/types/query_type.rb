@@ -23,10 +23,12 @@ module Types
       Baby.all
     end
 
-    field :baby, UserType, null: false,
-      description: "Single Baby"
-    def baby
-      Baby.first
+    field :baby, BabyType, null: false do 
+      description "Find a baby by ID"
+      argument :id, ID, required: true
+    end
+    def baby(id:)
+      Baby.find(id)
     end
 
     #Event Queries

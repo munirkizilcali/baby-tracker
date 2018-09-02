@@ -1,5 +1,6 @@
 module Types
   class EventType < Types::BaseObject
+    field :id, ID, null: false
     field :event_type, String, null: true
     field :event_time, String, null: true
     field :baby, Types::BabyType, null: true
