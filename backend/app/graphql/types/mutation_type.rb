@@ -1,12 +1,20 @@
-module Types
-  class MutationType < Types::BaseObject
+# module Types
+#   class MutationType < Types::BaseObject
 
-    field :test_field, String, null: false do
-      description "An example field added by the generator"
-      argument :id, ID, required: true
-    end
-    def test_field(id:)
-      "Hello World"
-    end
-  end
+#     field :test_field, String, null: false do
+#       description "An example field added by the generator"
+#       argument :id, ID, required: true
+#     end
+#     def test_field(id:)
+#       "Hello World"
+#     end
+#   end
+# end
+
+Types::MutationType = GraphQL::ObjectType.define do  
+  name 'Mutation'
+
+  field :createBaby, function: Resolvers::CreateBaby.new
+  field :createUser, function: Resolvers::CreateUser.new
+  field :signinUser, function: Resolvers::SignInUser.new
 end

@@ -5,7 +5,8 @@ class GraphqlController < ApplicationController
     operation_name = params[:operationName]
     context = {
       # Query context goes here, for example:
-      # current_user: current_user,
+      current_user: current_user,
+      session: session
     }
     result = BackendSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
@@ -39,5 +40,17 @@ class GraphqlController < ApplicationController
     logger.error e.backtrace.join("\n")
 
     render json: { error: { message: e.message, backtrace: e.backtrace }, data: {} }, status: 500
+  end
+
+  def current_user
+    return unless session[:token]
+
+    crypt = ActiveSupport::MessageEncryptor.new(TOKEN_SECRET)
+    token = crypt.decrypt_and_verify session[:token]
+
+    user_id = token.gsub('user-id:', '').to_i
+    User.find_by id: user_id
+    rescue ActiveSupport::MessageVerifier::InvalidSignature
+      nil
   end
 end
