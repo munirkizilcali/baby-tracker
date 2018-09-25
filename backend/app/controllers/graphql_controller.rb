@@ -42,15 +42,4 @@ class GraphqlController < ApplicationController
     render json: { error: { message: e.message, backtrace: e.backtrace }, data: {} }, status: 500
   end
 
-  def current_user
-    return unless session[:token]
-
-    crypt = ActiveSupport::MessageEncryptor.new(TOKEN_SECRET)
-    token = crypt.decrypt_and_verify session[:token]
-
-    user_id = token.gsub('user-id:', '').to_i
-    User.find_by id: user_id
-    rescue ActiveSupport::MessageVerifier::InvalidSignature
-      nil
-  end
 end
