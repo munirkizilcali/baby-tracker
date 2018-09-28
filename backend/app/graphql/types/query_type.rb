@@ -50,6 +50,6 @@ Types::QueryType = GraphQL::ObjectType.define do
   name 'Query'
 
   field :allUsers, !types[Types::UserType] do  
-    resolve -> (obj, args, ctx) { [current_user] }
+    resolve -> (obj, args, ctx) { [ctx[:current_user]] }
   end
 end
