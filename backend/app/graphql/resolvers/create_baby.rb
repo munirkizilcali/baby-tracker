@@ -6,12 +6,12 @@ class Resolvers::CreateBaby < GraphQL::Function
 
     type Types::BabyType
 
-    def call(_obj, args, _ctx)
+    def call(_obj, args, ctx)
     	Baby.create!(
 			name: args[:name],
 			sex: args[:sex],
 			birth_day: args[:birthDay],
-			mother_id: args[:motherId]
+			mother_id: ctx[:current_user].id
     	)
     end
 end
