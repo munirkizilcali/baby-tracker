@@ -53,13 +53,13 @@ Types::QueryType = GraphQL::ObjectType.define do
     resolve -> (obj, args, ctx) { [ctx[:current_user]] }
   end
 
-  field :children, !types[Types::BabyType] do  
-    resolve -> (obj, args, ctx) { [ctx[:current_user].children] }
-  end
+  # field :children, !types[Types::BabyType] do  
+  #   resolve -> (obj, args, ctx) { [ctx[:current_user].children] }
+  # end
 
-  field :babies, !types[Types::BabyType] do  
-    resolve -> (obj, args, ctx) { [ctx[:current_user].babies] }
-  end
+  # field :babies, !types[Types::BabyType] do  
+  #   resolve -> (obj, args, ctx) { [ctx[:current_user].babies] }
+  # end
 
   # field :allEvents, !types[Types::EventType] do 
   # 	resolve -> (obj, args, ctx) { [ctx[:current_user].events]}
