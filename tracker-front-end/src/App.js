@@ -22,17 +22,6 @@ class App extends Component {
           >
            tabi Learn React
           </a>
-
-        <div className="dropdown .visible-xs">
-          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick={()=>this.setState({ show: !this.state.show })}>
-            Dropdown button
-          </button>
-          <div className='dropdown-menu show animated fadeIn .visible-md-inline' aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href="#">Action</a>
-            <a className="dropdown-item" href="#">Another action</a>
-            <a className="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
       </div>
     );
   }
