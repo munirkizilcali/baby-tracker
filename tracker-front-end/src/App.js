@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { createApolloFetch } from 'apollo-fetch';
 
 
 class App extends Component {
@@ -26,21 +25,6 @@ class App extends Component {
                     }
                   }
                   `
-
-    const apolloFetch = createApolloFetch({ uri });
-
-    apolloFetch.use(({ request, options }, next) => {
-      if (!options.headers) {
-        options.headers = {};  // Create the headers object if needed.
-      }
-      options.headers['authorization'] = authorization;
-
-      next();
-    });
-    console.log(query)
-    apolloFetch({query}).then(resp=>this.setState({userInfo: resp.data}))
-
-
   }
 
   toggleShow = () => {
