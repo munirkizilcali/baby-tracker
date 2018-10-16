@@ -3,7 +3,7 @@ class BabiesController < ApplicationController
 
   # GET /babies
   def index
-    @babies = Baby.all
+    @babies = current_user.babies
 
     render json: @babies
   end
