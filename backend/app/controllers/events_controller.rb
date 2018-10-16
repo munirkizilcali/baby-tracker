@@ -3,7 +3,8 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.all
+    # @events = Event.all
+    @events = current_user.events
 
     render json: @events
   end
