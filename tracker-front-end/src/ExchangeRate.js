@@ -25,7 +25,6 @@ class ExchangeRate extends React.Component {
 						</div>
 					));
 				}}
-				} }
 			</Query>
 		);
 	}
