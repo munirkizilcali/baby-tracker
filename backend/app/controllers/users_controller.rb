@@ -5,8 +5,10 @@ class UsersController < ApplicationController
   def index
     # @users = User.all
     @user = current_user
-
-    render json: @user
+    # debugger
+    # render json: @user
+    render json: UserSerializer.new(@user).serialized_json
+          
   end
 
   # GET /users/1
