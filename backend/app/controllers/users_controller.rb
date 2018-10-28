@@ -3,12 +3,9 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    # @users = User.all
-    @user = current_user
-    # debugger
-    # render json: @user
-    render json: UserSerializer.new(@user).serialized_json
-          
+    @users = User.all
+    render json: @users
+      
   end
 
   # GET /users/1
@@ -34,6 +31,11 @@ class UsersController < ApplicationController
     else
       render json: @user.errors, status: :unprocessable_entity
     end
+  end
+
+  def me
+    @user = current_user
+    render json: @user
   end
 
   # DELETE /users/1

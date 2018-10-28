@@ -3,6 +3,7 @@ class Baby < ApplicationRecord
 	has_many :baby_users, dependent: :destroy
 	has_many :caretakers, through: :baby_users
 	has_many :events, dependent: :destroy
+	has_many :messages, dependent: :destroy
 
 	after_create :add_mother_to_caretakers
 
